@@ -62,3 +62,12 @@ if (test) {
 Sudah pasti error karena variabel test bertipe String, sedangkan pernyataan if dalam Dart hanya menerima kondisi bertipe boolean (true/false). Oleh karena itu, String tidak dapat langsung digunakan sebagai kondisi dalam if.
 
 yang benar ->
+```dart
+ String test2 = "true";
+
+  if (test2 == "true") {
+    print("Kebenaran");
+  } else {
+    print("Bukan Kebenaran");
+  }
+```
