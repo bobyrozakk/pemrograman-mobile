@@ -1,7 +1,7 @@
 # 📘 Tugas Praktikum - Percabangan & Perulangan (Dart)
 
 
-## 📝 Praktikum 1
+## 📝 Praktikum 1 : Menerapkan Control Flows ("if/else")
 
 **Langkah 1**
 
@@ -71,3 +71,71 @@ yang benar ->
     print("Bukan Kebenaran");
   }
 ```
+
+## 📝 Praktikum 2 : Menerapkan Perulangan "while" dan "do-while"
+
+
+**Langkah 1**
+
+Ketik atau salin kode program berikut ke dalam fungsi main()
+
+```dart
+while (counter < 33) {
+  print(counter);
+  counter++;
+}
+```
+***Jawaban :***
+## Screenshot Output
+![Langkah 1](praktikum2.png)
+
+**Langkah 2**
+
+***Jawaban :***
+
+Akan terjadi error karena variabel counter belum dideklarasikan dan belum diberi nilai awal.
+
+yang benar ->
+```dart
+void main() {
+  int counter = 0;
+
+  while (counter < 33) {
+    print(counter);
+    counter++;
+  }
+}
+```
+## Screenshot Output
+![Langkah 2](praktikum2/langkah2.png)
+Program akan mencetak angka dari 0 sampai 32.
+
+Kenapa sampai 32?
+Karena perulangan berjalan selama counter < 33. Saat counter sudah 33, kondisi menjadi false dan loop berhenti.
+
+**Langkah 3**
+
+Tambahkan kode program berikut, lalu coba eksekusi (Run) kode Anda.
+```dart
+do {
+  print(counter);
+  counter++;
+} while (counter < 77);
+```
+Apa yang terjadi ? Jika terjadi error, silakan perbaiki namun tetap menggunakan do-while.
+
+***Jawaban :***
+## Screenshot Output
+![Langkah 3](praktikum2/langkah3.png)
+Jika diletakkan setelah while sebelumnya, maka:
+
+- Setelah while pertama selesai, nilai counter adalah 33
+- Lalu masuk ke do-while
+- do-while akan mencetak dari 33 sampai 76
+
+Kenapa? Karena struktur do-while:
+
+- Blok kode dijalankan terlebih dahulu
+- Baru kondisi diperiksa
+
+Artinya, meskipun kondisi salah, kode tetap dijalankan minimal satu kali.
