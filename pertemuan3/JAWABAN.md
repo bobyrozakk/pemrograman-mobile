@@ -44,6 +44,8 @@ Penulisan yang benar :
 else if
 else
 ```
+## Screenshot Output
+![Langkah 2](langkah2.png)
 
 **Langkah 3**
 
@@ -55,3 +57,8 @@ if (test) {
    print("Kebenaran");
 }
 ```
+***Jawaban :***
+
+Sudah pasti error karena variabel test bertipe String, sedangkan pernyataan if dalam Dart hanya menerima kondisi bertipe boolean (true/false). Oleh karena itu, String tidak dapat langsung digunakan sebagai kondisi dalam if.
+
+yang benar ->
