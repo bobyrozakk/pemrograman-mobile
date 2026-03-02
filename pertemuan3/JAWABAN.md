@@ -28,7 +28,7 @@ Silakan coba eksekusi (Run) kode pada langkah 1 tersebut. Apa yang terjadi? Jela
 ***Jawaban :***
 
 ## Screenshot Output
-![Langkah 1](langkah1.png)
+![Langkah 1](praktikum1/langkah1.png)
 
 Akan terjadi ERROR (Syntax Error).
 Dart case-sensitive (huruf besar/kecil berpengaruh).
@@ -45,7 +45,7 @@ else if
 else
 ```
 ## Screenshot Output
-![Langkah 2](langkah2.png)
+![Langkah 2](praktikum1/langkah2.png)
 
 **Langkah 3**
 
@@ -71,6 +71,8 @@ yang benar ->
     print("Bukan Kebenaran");
   }
 ```
+## Screenshot Output
+![Langkah 2](praktikum1/langkah3.png)
 
 ## 📝 Praktikum 2 : Menerapkan Perulangan "while" dan "do-while"
 
@@ -87,7 +89,7 @@ while (counter < 33) {
 ```
 ***Jawaban :***
 ## Screenshot Output
-![Langkah 1](praktikum2.png)
+![Langkah 1](praktikum2/langkah1.png)
 
 **Langkah 2**
 
