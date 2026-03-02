@@ -139,3 +139,86 @@ Kenapa? Karena struktur do-while:
 - Baru kondisi diperiksa
 
 Artinya, meskipun kondisi salah, kode tetap dijalankan minimal satu kali.
+
+## 📝 Praktikum 3: Menerapkan Perulangan "for" dan "break-continue"
+
+**Langkah 1**
+
+Ketik atau salin kode program berikut ke dalam fungsi main().
+```dart
+for (Index = 10; index < 27; index) {
+  print(Index);
+}
+```
+***Jawaban :***
+![Langkah 1](praktikum3/langkah1.png)
+
+**Langkah 2**
+
+Silakan coba eksekusi (Run) kode pada langkah 1 tersebut. Apa yang terjadi? Jelaskan! Lalu perbaiki jika terjadi error.
+
+***Jawaban :***
+
+Muncul error (compile error) karena:
+
+- Variabel Index dan index berbeda (huruf besar–kecil berpengaruh di Dart).
+- Variabel Index belum dideklarasikan.
+- Tidak ada operator increment (index++).
+- Sintaks for tidak lengkap.
+
+yang benar ->
+```dart
+void main() {
+  for (int index = 10; index < 27; index++) {
+    print(index);
+  }
+}
+```
+## Screenshot Output
+![Langkah 3](praktikum3/langkah2.png)
+
+Angka akan tampil dari 10 sampai 26.
+
+Karena:
+- Mulai dari 10
+- Berhenti saat < 27
+- Bertambah 1 setiap perulangan
+
+**Langkah 3**
+
+Tambahkan kode program berikut di dalam for-loop, lalu coba eksekusi (Run) kode Anda.
+```dart
+If (Index == 21) break;
+Else If (index > 1 || index < 7) continue;
+print(index);
+```
+Apa yang terjadi ? Jika terjadi error, silakan perbaiki namun tetap menggunakan for dan break-continue.
+
+***Jawaban :***
+
+Masalah yang Terjadi:
+
+- If harus huruf kecil → if
+- Else If harus → else if
+- Index dan index tidak konsisten
+- Logika index > 1 || index < 7 selalu TRUE
+Karena semua angka pasti lebih dari 1 ATAU kurang dari 7.
+
+yang benar ->
+```dart
+void main() {
+  for (int index = 10; index < 27; index++) {
+    if (index == 21) break;
+    else if (index > 11 && index < 15) continue;
+    print(index);
+  }
+}
+```
+
+## Screenshot Output
+![Langkah 3](praktikum3/langkah3.png)
+
+- Perulangan dari 10 sampai 26.
+- Jika index == 21 → perulangan berhenti (break).
+- Jika index > 11 && index < 15 → angka 12, 13, 14 dilewati (continue).
+- Angka lainnya akan ditampilkan.
