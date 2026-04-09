@@ -89,3 +89,23 @@ return MaterialApp(
 ![](assets/Langkah01.png)
 
 **Langkah 2 : Cupertino Button dan Loading Bar**
+
+Button widget terdapat beberapa macam pada flutter yaitu ButtonBar, DropdownButton, TextButton, FloatingActionButton, IconButton, OutlineButton, PopupMenuButton, dan ElevatedButton.
+
+Buat file di basic_widgets > fab_widget.dart. Import stateless widget dari material. Lalu isi kode di dalam method Widget build adalah sebagai berikut.
+  ```dart
+  return MaterialApp(
+        home: Scaffold(
+          floatingActionButton: FloatingActionButton(
+            onPressed: () {
+              // Add your onPressed code here!
+            },
+            child: const Icon(Icons.thumb_up),
+            backgroundColor: Colors.pink,
+          ),
+        ),
+      );
+  ```
+  ***Jawaban :***
+
+![](assets/Langkah202.png)

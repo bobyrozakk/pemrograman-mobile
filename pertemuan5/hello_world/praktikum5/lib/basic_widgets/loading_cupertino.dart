@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/cupertino.dart'; 
+import 'package:flutter/cupertino.dart';
 
 class MyLoadingCupertino extends StatelessWidget {
   const MyLoadingCupertino({Key? key}) : super(key: key);
@@ -7,7 +7,7 @@ class MyLoadingCupertino extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     // Langsung return Scaffold, tidak perlu MaterialApp lagi
-    return Scaffold( 
+    return Scaffold(
       body: Container(
         width: double.infinity,
         margin: const EdgeInsets.only(top: 50),
@@ -20,7 +20,7 @@ class MyLoadingCupertino extends StatelessWidget {
                 // Tambahkan aksi di sini
               },
             ),
-            const SizedBox(height: 20), 
+            const SizedBox(height: 20),
             const CupertinoActivityIndicator(),
           ],
         ),
