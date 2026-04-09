@@ -59,3 +59,33 @@ class MyImageWidget extends StatelessWidget {
 ***Jawaban :***
 
 ![](assets/langkah_02.jpeg)
+
+## 📝 Praktikum 5 : Menerapkan Widget Material Design dan iOS Cupertino
+
+**Langkah 1 : Cupertino Button dan Loading Bar**
+
+Buat file di basic_widgets > loading_cupertino.
+dart. Import stateless widget dari material dan cupertino. Lalu isi kode di dalam method Widget build adalah sebagai berikut.
+```dart
+return MaterialApp(
+      home: Container(
+        margin: const EdgeInsets.only(top: 30),
+        color: Colors.white,
+        child: Column(
+          children: <Widget>[
+            CupertinoButton(
+              child: const Text("Contoh button"),
+              onPressed: () {},
+            ),
+            const CupertinoActivityIndicator(),
+          ],
+        ),
+      ),
+    );
+```
+
+***Jawaban :***
+
+![](assets/Langkah01.png)
+
+**Langkah 2 : Cupertino Button dan Loading Bar**
