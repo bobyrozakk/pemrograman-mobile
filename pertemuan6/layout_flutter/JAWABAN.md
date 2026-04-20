@@ -203,3 +203,10 @@ Widget textSection = Container(
 );
 ```
 Dengan memberi nilai softWrap = true, baris teks akan memenuhi lebar kolom sebelum membungkusnya pada batas kata.
+
+
+**Langkah 2 : Tambahkan variabel text section ke body**
+Tambahkan widget variabel textSection ke dalam body seperti berikut:
+
+
+![Langkah 2](assets/praktikum3/example.png)
