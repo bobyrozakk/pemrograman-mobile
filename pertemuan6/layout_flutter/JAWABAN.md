@@ -218,3 +218,13 @@ Tambahkan widget variabel textSection ke dalam body seperti berikut:
 Anda dapat mencari gambar di internet yang ingin ditampilkan. Buatlah folder images di root project layout_flutter. Masukkan file gambar tersebut ke folder images, lalu set nama file tersebut ke file pubspec.yaml seperti berikut:
 
 ![Langkah 1](assets/praktikum4/example.png)
+
+**Langkah 2 : Tambahkan gambar ke body**
+
+Tambahkan aset gambar ke dalam body seperti berikut:
+
+![Langkah 2](assets/praktikum4/langkah2.png)
+
+BoxFit.cover memberi tahu kerangka kerja bahwa gambar harus sekecil mungkin tetapi menutupi seluruh kotak rendernya.
+
+![Langkah 3](assets/praktikum4/langkah2.png)

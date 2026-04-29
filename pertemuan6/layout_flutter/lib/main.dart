@@ -69,8 +69,16 @@ class MyApp extends StatelessWidget {
       home: Scaffold(
         appBar: AppBar(title: const Text('Flutter layout demo')),
         body: Column(
-          // crossAxisAlignment: CrossAxisAlignment.start,
-          children: [titleSection, buttonSection, textSection],
+          children: [
+            Image.asset(
+              'assets/images/whiteswan.jpg',
+              width: 600,
+              height: 240,
+              fit: BoxFit.cover,
+            ),
+            // crossAxisAlignment: CrossAxisAlignment.start,
+            titleSection, buttonSection, textSection,
+          ],
         ),
       ),
     );
