@@ -210,3 +210,11 @@ Tambahkan widget variabel textSection ke dalam body seperti berikut:
 
 
 ![Langkah 2](assets/praktikum3/example.png)
+
+## 📝 Praktikum 4 : Implementasi textSection
+
+**Langkah 1 : Siapkan aset gambar**
+
+Anda dapat mencari gambar di internet yang ingin ditampilkan. Buatlah folder images di root project layout_flutter. Masukkan file gambar tersebut ke folder images, lalu set nama file tersebut ke file pubspec.yaml seperti berikut:
+
+![Langkah 1](assets/praktikum4/example.png)
