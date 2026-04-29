@@ -58,7 +58,8 @@ class MyApp extends StatelessWidget {
         'Anda tampilkan. '
         'Tambahkan nama dan NIM Anda sebagai '
         'identitas hasil pekerjaan Anda. '
-        'Selamat mengerjakan 🙂.',
+        'Selamat mengerjakan 🙂.'
+        'boby rozaksss saputraaa 2341760162',
         softWrap: true,
       ),
     );

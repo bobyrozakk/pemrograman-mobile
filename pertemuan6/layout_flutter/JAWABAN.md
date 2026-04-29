@@ -232,3 +232,7 @@ BoxFit.cover memberi tahu kerangka kerja bahwa gambar harus sekecil mungkin teta
 Pada langkah terakhir ini, atur semua elemen dalam ListView, bukan Column, karena ListView mendukung scroll yang dinamis saat aplikasi dijalankan pada perangkat yang resolusinya lebih kecil.
 
 ![Langkah 3](assets/praktikum4/langkah3.png)
+
+***Jawaban :***
+
+![Langkah 4](assets/praktikum4/result.png)
