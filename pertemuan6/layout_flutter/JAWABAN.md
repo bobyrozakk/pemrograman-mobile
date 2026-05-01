@@ -256,3 +256,7 @@ Pada praktikum 5 ini anda akan belajar mengenai pembangunan aplikasi bergerak mu
 **Langkah 1 : Siapkan project baru**
 
 Sebelum melanjutkan praktikum, buatlah sebuah project baru Flutter dengan nama belanja dan susunan folder seperti pada gambar berikut. Penyusunan ini dimaksudkan untuk mengorganisasi kode dan widget yang lebih mudah.
+
+![alt text](../belanja/assets/images/langkah1.png)
+
+**Langkah 2 : Siapkan project baru**
