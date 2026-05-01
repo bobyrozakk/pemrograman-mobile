@@ -264,3 +264,11 @@ Sebelum melanjutkan praktikum, buatlah sebuah project baru Flutter dengan nama b
 Buatlah dua buah file dart dengan nama home_page.dart dan item_page.dart pada folder pages. Untuk masing-masing file, deklarasikan class HomePage pada file home_page.dart dan ItemPage pada item_page.dart. Turunkan class dari StatelessWidget. Gambaran potongan kode dapat anda lihat sebagai berikut.
 
 ![alt text](../belanja/assets/images/langkah2.png)
+
+**Langkah 3 : Lengkapi kode di main.dart**
+
+Setelah kedua halaman telah dibuat dan didefinisikan, bukalah file main.dart. Pada langkah ini anda akan mendefinisikan Route untuk kedua halaman tersebut. Definisi penamaan route harus bersifat unique. Halaman HomePage didefinisikan sebagai /. Dan halaman ItemPage didefinisikan sebagai /item. Untuk mendefinisikan halaman awal, anda dapat menggunakan named argument initialRoute.
+
+![alt text](../belanja/assets/images/langkah3.png)
+
+**Langkah 4 : Membuat data model**
