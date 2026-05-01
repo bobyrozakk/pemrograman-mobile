@@ -259,4 +259,8 @@ Sebelum melanjutkan praktikum, buatlah sebuah project baru Flutter dengan nama b
 
 ![alt text](../belanja/assets/images/langkah1.png)
 
-**Langkah 2 : Siapkan project baru**
+**Langkah 2 : Mendefinisikan Route**
+
+Buatlah dua buah file dart dengan nama home_page.dart dan item_page.dart pada folder pages. Untuk masing-masing file, deklarasikan class HomePage pada file home_page.dart dan ItemPage pada item_page.dart. Turunkan class dari StatelessWidget. Gambaran potongan kode dapat anda lihat sebagai berikut.
+
+![alt text](../belanja/assets/images/langkah2.png)
