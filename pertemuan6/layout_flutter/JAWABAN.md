@@ -236,3 +236,23 @@ Pada langkah terakhir ini, atur semua elemen dalam ListView, bukan Column, karen
 ***Jawaban :***
 
 ![Langkah 4](assets/praktikum4/result.png)
+
+## 📝 Praktikum 5 : Membangun Navigasi di Flutter
+
+Apa yang akan Anda pelajari
+
+> [!TIP]
+> Cara kerja mekanisme navigation dan route di Flutter.
+> Cara kerja mekanisme navigation dan route di Flutter.
+
+Selesaikan langkah-langkah praktikum berikut ini menggunakan editor Visual Studio Code (VS Code) atau Android Studio atau code editor lain kesukaan Anda. Materi ini dapat dimasukkan ke Laporan Praktikum folder Week atau Pertemuan 06.
+
+Tampilan akhir yang akan Anda buat :
+![contoh](assets/praktikum5/contoh2.png)
+![contoh](assets/praktikum5/contoh1.png)
+
+Pada praktikum 5 ini anda akan belajar mengenai pembangunan aplikasi bergerak multi halaman. Aplikasi yang dikembangkan berupa kasus daftar barang belanja. Pada aplikasi ini anda akan belajar untuk berpindah halaman dan mengirimkan data ke halaman lainnya. Gambaran mockup hasil akhir aplikasi dapat anda lihat pada gambar di atas (mockup dibuat sederhana, sehingga Anda mempunyai banyak ruang untuk berkreasi). Desain aplikasi menampilkan sebuah ListView widget yang datanya bersumber dari List. Ketika item ditekan, data akan dikirimkan ke halaman berikutnya.
+
+**Langkah 1 : Siapkan project baru**
+
+Sebelum melanjutkan praktikum, buatlah sebuah project baru Flutter dengan nama belanja dan susunan folder seperti pada gambar berikut. Penyusunan ini dimaksudkan untuk mengorganisasi kode dan widget yang lebih mudah.
