@@ -333,4 +333,23 @@ Untuk menampilkan ListView pada praktikum ini digunakan itemBuilder. Data diambi
         ),
       ),
 ```
+![alt text](../belanja/assets/images/langkah6.png)
+
 **Langkah 7 : Menambahkan aksi pada ListView**
+
+Item pada ListView saat ini ketika ditekan masih belum memberikan aksi tertentu. Untuk menambahkan aksi pada ListView dapat digunakan widget InkWell atau GestureDetector. Perbedaan utamanya InkWell merupakan material widget yang memberikan efek ketika ditekan. Sedangkan GestureDetector bersifat umum dan bisa juga digunakan untuk gesture lain selain sentuhan. Pada praktikum ini akan digunakan widget InkWell.
+
+Untuk menambahkan sentuhan, letakkan cursor pada widget pembuka Card. Kemudian gunakan shortcut quick fix dari VSCode (Ctrl + . pada Windows atau Cmd + . pada MacOS). Sorot menu wrap with widget... Ubah nilai widget menjadi InkWell serta tambahkan named argument onTap yang berisi fungsi untuk berpindah ke halaman ItemPage. Ilustrasi potongan kode dapat anda lihat pada potongan berikut.
+
+```dart
+return InkWell(
+              onTap: () {
+                Navigator.pushNamed(
+                  context,
+                  '/item',
+                );
+              },
+            );
+```
+
+![alt text](../belanja/assets/images/langkah7.png)
