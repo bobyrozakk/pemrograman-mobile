@@ -353,3 +353,208 @@ return InkWell(
 ```
 
 ![alt text](../belanja/assets/images/langkah7.png)
+
+## 📝 Tugas Praktikum
+
+1. Untuk melakukan pengiriman data ke halaman berikutnya, cukup menambahkan informasi arguments pada penggunaan Navigator. Perbarui kode pada bagian Navigator menjadi seperti berikut.
+```dart
+Navigator.pushNamed(context, '/item', arguments: item);
+```
+2. Pembacaan nilai yang dikirimkan pada halaman sebelumnya dapat dilakukan menggunakan ModalRoute. Tambahkan kode berikut pada blok fungsi build dalam halaman ItemPage. Setelah nilai didapatkan, anda dapat menggunakannya seperti penggunaan variabel pada umumnya. (https://docs.flutter.dev/cookbook/navigation/navigate-with-arguments)
+```dart
+final itemArgs = ModalRoute.of(context)!.settings.arguments as Item;
+```
+3. Pada hasil akhir dari aplikasi belanja yang telah anda selesaikan, tambahkan atribut foto produk, stok, dan rating. Ubahlah tampilan menjadi GridView seperti di aplikasi marketplace pada umumnya.
+4. Silakan implementasikan Hero widget pada aplikasi belanja Anda dengan mempelajari dari sumber ini: https://docs.flutter.dev/cookbook/navigation/hero-animations
+5. Sesuaikan dan modifikasi tampilan sehingga menjadi aplikasi yang menarik. Selain itu, pecah widget menjadi kode yang lebih kecil. Tambahkan Nama dan NIM di footer aplikasi belanja Anda.
+
+6. Selesaikan Praktikum 5: Navigasi dan Rute tersebut. Cobalah modifikasi menggunakan plugin go_router, lalu dokumentasikan dan push ke repository Anda berupa screenshot setiap hasil pekerjaan beserta penjelasannya di file README.md. Kumpulkan link commit repository GitHub Anda kepada dosen yang telah disepakati!
+
+
+
+(**home_page.dart**)
+
+```dart
+class Item {
+  String name;
+  int price;
+  String image;
+  int stock;
+  double rating;
+
+  Item({
+    required this.name,
+    required this.price,
+    required this.image,
+    required this.stock,
+    required this.rating,
+  });
+}
+```
+
+```dart
+ @override
+  Widget build(BuildContext context) {
+    final List<Item> items = [
+      Item(
+        name: 'Capucino',
+        price: 5000,
+        image: 'assets/images/produk1.jpg',
+        stock: 10,
+        rating: 4.5,
+      ),
+      Item(
+        name: 'Flat White',
+        price: 2000,
+        image: 'assets/images/produk2.jpg',
+        stock: 20,
+        rating: 4.0,
+      ),
+      Item(
+        name: 'Coffee',
+        price: 10000,
+        image: 'assets/images/produk4.jpg',
+        stock: 15,
+        rating: 4.8,
+      ),
+    ];
+
+    return Scaffold(
+      appBar: AppBar(title: const Text('Marketplace'), centerTitle: true),
+      body: GridView.builder(
+        padding: const EdgeInsets.all(8),
+        itemCount: items.length,
+        gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+          crossAxisCount: 2,
+          childAspectRatio: 0.7,
+        ),
+        itemBuilder: (context, index) {
+          final item = items[index];
+
+          return InkWell(
+            onTap: () {
+              Navigator.pushNamed(context, '/item', arguments: item);
+            },
+            child: Card(
+              elevation: 3,
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Expanded(
+                    child: Hero(
+                      tag: item.name,
+                      child: Image.asset(
+                        item.image,
+                        fit: BoxFit.cover,
+                        width: double.infinity,
+                      ),
+                    ),
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.all(8),
+                    child: Text(
+                      item.name,
+                      style: const TextStyle(fontWeight: FontWeight.bold),
+                    ),
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.symmetric(horizontal: 8),
+                    child: Text('Rp ${item.price}'),
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.symmetric(horizontal: 8),
+                    child: Text('${item.rating} | Stok: ${item.stock}'),
+                  ),
+                ],
+              ),
+            ),
+          );
+        },
+      ),
+
+      bottomNavigationBar: const Padding(
+        padding: EdgeInsets.all(8),
+        child: Text(
+          'Nama: Boby | NIM: 2341760162',
+          textAlign: TextAlign.center,
+        ),
+      ),
+    );
+  }
+```
+
+(**item_page.dart**)
+
+```dart
+import 'package:flutter/material.dart';
+import 'home_page.dart'; // ambil class Item dari sini
+
+class ItemPage extends StatelessWidget {
+  const ItemPage({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    final item = ModalRoute.of(context)!.settings.arguments as Item;
+
+    return Scaffold(
+      appBar: AppBar(title: Text(item.name)),
+
+      body: SingleChildScrollView(
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Hero(
+              tag: item.name,
+              child: Image.asset(
+                item.image,
+                width: double.infinity,
+                height: 250,
+                fit: BoxFit.cover,
+              ),
+            ),
+
+            Padding(
+              padding: const EdgeInsets.all(16),
+              child: Text(
+                item.name,
+                style: const TextStyle(
+                  fontSize: 22,
+                  fontWeight: FontWeight.bold,
+                ),
+              ),
+            ),
+
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 16),
+              child: Text(
+                'Rp ${item.price}',
+                style: const TextStyle(fontSize: 18, color: Colors.green),
+              ),
+            ),
+
+            Padding(
+              padding: const EdgeInsets.all(16),
+              child: Text('Rating: ${item.rating}'),
+            ),
+
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 16),
+              child: Text('Stok tersedia: ${item.stock}'),
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+}
+
+```
+
+jangan lupa tambahkan di file pubspec.yaml agar gambar terbaca
+```dart
+flutter:
+  assets: 
+    - assets/images/whiteswan.jpg
+```
+![alt text](../belanja/assets/images/result.png)
+![alt text](../belanja/assets/images/result2.png)
