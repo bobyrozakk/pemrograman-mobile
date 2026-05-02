@@ -272,3 +272,65 @@ Setelah kedua halaman telah dibuat dan didefinisikan, bukalah file main.dart. Pa
 ![alt text](../belanja/assets/images/langkah3.png)
 
 **Langkah 4 : Membuat data model**
+
+Sebelum melakukan perpindahan halaman dari HomePage ke ItemPage, dibutuhkan proses pemodelan data. Pada desain mockup, dibutuhkan dua informasi yaitu nama dan harga. Untuk menangani hal ini, buatlah sebuah file dengan nama item.dart dan letakkan pada folder models. Pada file ini didefinisikan pemodelan data yang dibutuhkan. Ilustrasi kode yang dibutuhkan, dapat anda lihat pada potongan kode berikut.
+
+```dart
+class Item {
+  String name;
+  int price;
+
+  Item({required this.name, required this.price});
+}
+```
+
+**Langkah 5 : Lengkapi kode di class HomePage**
+
+Pada halaman HomePage terdapat ListView widget. Sumber data ListView diambil dari model List dari object Item. Gambaran kode yang dibutuhkan untuk melakukan definisi model dapat anda lihat sebagai berikut.
+
+```dart
+class HomePage extends StatelessWidget {
+  HomePage({super.key});
+
+  final List<Item> items = [
+    Item(name: 'Sugar', price: 5000),
+    Item(name: 'Salt', price: 2000),
+  ];
+}
+```
+**Langkah 6 : Membuat ListView dan itemBuilder**
+
+Untuk menampilkan ListView pada praktikum ini digunakan itemBuilder. Data diambil dari definisi model yang telah dibuat sebelumnya. Untuk menunjukkan batas data satu dan berikutnya digunakan widget Card. Kode yang telah umum pada bagian ini tidak ditampilkan. Gambaran kode yang dibutuhkan dapat anda lihat sebagai berikut.
+
+```dart
+ body: Container(
+        margin: const EdgeInsets.all(8),
+        child: ListView.builder(
+          padding: const EdgeInsets.all(8),
+          itemCount: items.length,
+          itemBuilder: (context, index) {
+            final item = items[index];
+
+            return Card(
+              child: Container(
+                margin: const EdgeInsets.all(8),
+                child: Row(
+                  children: [
+                    Expanded(
+                      child: Text(item.name),
+                    ),
+                    Expanded(
+                      child: Text(
+                        item.price.toString(),
+                        textAlign: TextAlign.end,
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+            );
+          },
+        ),
+      ),
+```
+**Langkah 7 : Menambahkan aksi pada ListView**
