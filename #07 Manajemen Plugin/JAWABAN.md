@@ -7,212 +7,132 @@
 
 Buatlah sebuah project flutter baru dengan nama flutter_plugin_pubdev. Lalu jadikan repository di GitHub Anda dengan nama flutter_plugin_pubdev.
 
+![Langkah 1](./flutter_plugin_pubdev/images/langkah1.png)
 
 **Langkah 2: Menambahkan Plugin**
 Tambahkan plugin auto_size_text menggunakan perintah berikut di terminal :
 ```
 flutter pub add auto_size_text
 ```
-**Langkah 2**
+jika berhasil, maka akan tampil nama plugin beserta versinya di file pubspec.yaml pada bagian dependencies.
 
-Silakan coba eksekusi (Run) kode pada langkah 1 tersebut. Apa yang terjadi? Jelaskan!
+![Langkah 2](./flutter_plugin_pubdev/images/langkah2.png)
 
-***Jawaban :***
+**Langkah 3: Buat file red_text_widget.dart**
 
-## Screenshot Output
-![Langkah 1](praktikum1/langkah1.png)
-
-Akan terjadi ERROR (Syntax Error).
-Dart case-sensitive (huruf besar/kecil berpengaruh).
-
-Penulisan yang salah :
-```dart
-else If
-Else
-```
-
-Penulisan yang benar :
-```dart
-else if
-else
-```
-## Screenshot Output
-![Langkah 2](praktikum1/langkah2.png)
-
-**Langkah 3**
-
-Tambahkan kode program berikut, lalu coba eksekusi (Run) kode Anda.
+Buat file baru bernama red_text_widget.dart di dalam folder lib lalu isi kode seperti berikut.
 
 ```dart
-String test = "true";
-if (test) {
-   print("Kebenaran");
-}
-```
-***Jawaban :***
+import 'package:flutter/material.dart';
 
-Sudah pasti error karena variabel test bertipe String, sedangkan pernyataan if dalam Dart hanya menerima kondisi bertipe boolean (true/false). Oleh karena itu, String tidak dapat langsung digunakan sebagai kondisi dalam if.
+class RedTextWidget extends StatelessWidget {
+  const RedTextWidget({Key? key}) : super(key: key);
 
-yang benar ->
-```dart
- String test2 = "true";
-
-  if (test2 == "true") {
-    print("Kebenaran");
-  } else {
-    print("Bukan Kebenaran");
-  }
-```
-## Screenshot Output
-![Langkah 2](praktikum1/langkah3.png)
-
-## 📝 Praktikum 2 : Menerapkan Perulangan "while" dan "do-while"
-
-
-**Langkah 1**
-
-Ketik atau salin kode program berikut ke dalam fungsi main()
-
-```dart
-while (counter < 33) {
-  print(counter);
-  counter++;
-}
-```
-***Jawaban :***
-## Screenshot Output
-![Langkah 1](praktikum2/langkah1.png)
-
-**Langkah 2**
-
-***Jawaban :***
-
-Akan terjadi error karena variabel counter belum dideklarasikan dan belum diberi nilai awal.
-
-yang benar ->
-```dart
-void main() {
-  int counter = 0;
-
-  while (counter < 33) {
-    print(counter);
-    counter++;
-  }
-}
-```
-## Screenshot Output
-![Langkah 2](praktikum2/langkah2.png)
-Program akan mencetak angka dari 0 sampai 32.
-
-Kenapa sampai 32?
-Karena perulangan berjalan selama counter < 33. Saat counter sudah 33, kondisi menjadi false dan loop berhenti.
-
-**Langkah 3**
-
-Tambahkan kode program berikut, lalu coba eksekusi (Run) kode Anda.
-```dart
-do {
-  print(counter);
-  counter++;
-} while (counter < 77);
-```
-Apa yang terjadi ? Jika terjadi error, silakan perbaiki namun tetap menggunakan do-while.
-
-***Jawaban :***
-## Screenshot Output
-![Langkah 3](praktikum2/langkah3.png)
-Jika diletakkan setelah while sebelumnya, maka:
-
-- Setelah while pertama selesai, nilai counter adalah 33
-- Lalu masuk ke do-while
-- do-while akan mencetak dari 33 sampai 76
-
-Kenapa? Karena struktur do-while:
-
-- Blok kode dijalankan terlebih dahulu
-- Baru kondisi diperiksa
-
-Artinya, meskipun kondisi salah, kode tetap dijalankan minimal satu kali.
-
-## 📝 Praktikum 3: Menerapkan Perulangan "for" dan "break-continue"
-
-**Langkah 1**
-
-Ketik atau salin kode program berikut ke dalam fungsi main().
-```dart
-for (Index = 10; index < 27; index) {
-  print(Index);
-}
-```
-***Jawaban :***
-![Langkah 1](praktikum3/langkah1.png)
-
-**Langkah 2**
-
-Silakan coba eksekusi (Run) kode pada langkah 1 tersebut. Apa yang terjadi? Jelaskan! Lalu perbaiki jika terjadi error.
-
-***Jawaban :***
-
-Muncul error (compile error) karena:
-
-- Variabel Index dan index berbeda (huruf besar–kecil berpengaruh di Dart).
-- Variabel Index belum dideklarasikan.
-- Tidak ada operator increment (index++).
-- Sintaks for tidak lengkap.
-
-yang benar ->
-```dart
-void main() {
-  for (int index = 10; index < 27; index++) {
-    print(index);
-  }
-}
-```
-## Screenshot Output
-![Langkah 3](praktikum3/langkah2.png)
-
-Angka akan tampil dari 10 sampai 26.
-
-Karena:
-- Mulai dari 10
-- Berhenti saat < 27
-- Bertambah 1 setiap perulangan
-
-**Langkah 3**
-
-Tambahkan kode program berikut di dalam for-loop, lalu coba eksekusi (Run) kode Anda.
-```dart
-If (Index == 21) break;
-Else If (index > 1 || index < 7) continue;
-print(index);
-```
-Apa yang terjadi ? Jika terjadi error, silakan perbaiki namun tetap menggunakan for dan break-continue.
-
-***Jawaban :***
-
-Masalah yang Terjadi:
-
-- If harus huruf kecil → if
-- Else If harus → else if
-- Index dan index tidak konsisten
-- Logika index > 1 || index < 7 selalu TRUE
-Karena semua angka pasti lebih dari 1 ATAU kurang dari 7.
-
-yang benar ->
-```dart
-void main() {
-  for (int index = 10; index < 27; index++) {
-    if (index == 21) break;
-    else if (index > 11 && index < 15) continue;
-    print(index);
+  @override
+  Widget build(BuildContext context) {
+    return Container();
   }
 }
 ```
 
-## Screenshot Output
-![Langkah 3](praktikum3/langkah3.png)
+**Langkah 4: Tambah Widget AutoSizeText**
 
-- Perulangan dari 10 sampai 26.
-- Jika index == 21 → perulangan berhenti (break).
-- Jika index > 11 && index < 15 → angka 12, 13, 14 dilewati (continue).
-- Angka lainnya akan ditampilkan.
+Masih di file red_text_widget.dart, untuk menggunakan plugin auto_size_text, ubahlah kode return Container() menjadi seperti berikut.
+```dart
+return AutoSizeText(
+      text,
+      style: const TextStyle(color: Colors.red, fontSize: 14),
+      maxLines: 2,
+      overflow: TextOverflow.ellipsis,
+);
+```
+
+Setelah Anda menambahkan kode di atas, Anda akan mendapatkan info error. Mengapa demikian? Jelaskan dalam laporan praktikum Anda!
+
+![Langkah 4](./flutter_plugin_pubdev/images/1234.png)
+
+Jawab: 
+
+  Error tersebut terjadi karena dua hal:
+
+1. Package belum di-import: Kita menggunakan widget AutoSizeText tetapi belum mengimpor library-nya. Kita perlu menambahkan import 'package:auto_size_text/auto_size_text.dart'; di bagian atas file.
+2. Variabel text belum didefinisikan: Pada kode di atas, kita memasukkan variabel text ke dalam AutoSizeText, namun variabel tersebut belum dideklarasikan di dalam class RedTextWidget. Variabel ini baru akan ditambahkan pada Langkah 5.
+
+**Langkah 5: Buat variabel text dan parameter di constructor**
+
+Tambahkan variabel text dan parameter di constructor seperti berikut.
+```dart
+final String text;
+
+const RedTextWidget({Key? key, required this.text}) : super(key: key);
+```
+![Langkah 5](./flutter_plugin_pubdev/images/langkah5.png)
+
+
+**Langkah 6: Tambahkan widget di main.dart**
+Buka file main.dart lalu tambahkan di dalam children: pada class _MyHomePageState:
+```dart
+Container(
+   color: Colors.yellowAccent,
+   width: 50,
+   child: const RedTextWidget(
+             text: 'You have pushed the button this many times:',
+          ),
+),
+Container(
+    color: Colors.greenAccent,
+    width: 100,
+    child: const Text(
+           'You have pushed the button this many times:',
+          ),
+),
+```
+
+![Langkah 6](./flutter_plugin_pubdev/images/langkah6.png)
+
+
+****Tugas****
+
+1. Selesaikan Praktikum tersebut, lalu dokumentasikan dan push ke repository Anda berupa screenshot hasil pekerjaan beserta penjelasannya di file README.md!
+2. Jelaskan maksud dari langkah 2 pada praktikum tersebut!
+    - Jawab: Perintah flutter pub add auto_size_text digunakan untuk menginstal package/plugin eksternal auto_size_text ke dalam project Flutter. Perintah ini akan mengunduh package dan secara otomatis mendaftarkannya ke file pubspec.yaml di bagian dependencies.
+
+3. Jelaskan maksud dari langkah 5 pada praktikum tersebut!
+
+    - Jawab: Langkah 5 bertujuan untuk mendeklarasikan variabel text dan menjadikannya parameter required pada constructor RedTextWidget. Tujuannya agar widget tersebut menjadi dinamis dan dapat menerima input string atau tulisan dari luar saat widget dipanggil.
+4. Pada langkah 6 terdapat dua widget yang ditambahkan, jelaskan fungsi dan perbedaannya!
+
+    - Jawab:
+      - Container Kuning (Lebar 50): Menggunakan custom widget RedTextWidget yang di dalamnya mengimplementasikan AutoSizeText. Widget ini berfungsi untuk mengecilkan ukuran teks secara otomatis agar muat ke dalam batas lebar (50) dan maxLines (2). Teks yang berlebih dipotong dengan tanda ... (ellipsis).
+      - Container Hijau (Lebar 100): Menggunakan widget standar Text bawaan Flutter. Widget ini tidak dapat mengecilkan font secara otomatis. Akibatnya, teks berukuran statis dan bisa menyebabkan peringatan error (RenderFlex overflow) atau tulisan terpotong paksa apabila ruang yang tersedia tidak cukup.
+5. Jelaskan maksud dari tiap parameter yang ada di dalam plugin auto_size_text berdasarkan tautan pada dokumentasi ini!
+    - Jawab: Berdasarkan dokumentasi resmi, berikut adalah maksud dari tiap parameter AutoSizeText:
+      - key: Mengontrol bagaimana satu widget menggantikan widget lain di dalam widget tree.
+      - textKey: Menetapkan identifier/key untuk widget Text hasil render.
+      - style: Gaya atau styling (seperti warna, font family) yang digunakan untuk teks.
+      - minFontSize: Batas ukuran font terkecil yang digunakan saat menyesuaikan teks (default: 12). Diabaikan jika presetFontSizes diatur.
+      - maxFontSize: Batas ukuran font terbesar yang diizinkan. Berguna jika font size diwarisi dari parent tapi ingin kita batasi maksimalnya.
+      - stepGranularity: Ukuran per langkah (step) dalam menurunkan font size saat menyesuaikan batasan. Demi performa, nilainya sebaiknya tidak di bawah 1.
+      - presetFontSizes: Mendefinisikan secara spesifik daftar ukuran font yang diizinkan (harus diurutkan menurun). Jika ada, ukuran akan dipilih hanya dari daftar ini.
+      - group: Digunakan untuk menyelaraskan (synchronize) ukuran font dari beberapa widget AutoSizeText ke ukuran font terkecil di grup tersebut.
+      - textAlign: Mengatur perataan teks secara horizontal (kiri, tengah, kanan, dsb).
+      - textDirection: Arah penulisan teks (contoh: LTR atau RTL).
+      - locale: Memilih font spesifik berdasarkan locale/bahasa.
+      - softWrap: Menentukan apakah teks boleh membungkus ke baris baru (wrap) pada titik perhentian spasi standar.
+      - wrapWords: Menentukan apakah kata-kata yang tidak muat akan dipaksa turun baris (default: true).
+      - overflow: Menentukan cara penanganan visual jika teks melampaui batas ukuran.
+      - overflowReplacement: Menampilkan widget alternatif/pengganti jika teks tidak muat dan overflow pada batasnya (mencegah teks yang dirender terlalu kecil).
+      - textScaleFactor: Rasio skala font terhadap piksel logis perangkat.
+      - maxLines: Batasan jumlah baris maksimum yang diizinkan untuk teks.
+      - semanticsLabel: Label alternatif yang digunakan untuk fitur aksesibilitas (Screen Reader).
+
+6. Kumpulkan laporan praktikum Anda berupa link repository GitHub kepada dosen!
+
+
+****Tugas PBL****
+
+1. Buatlah kelompok minimal 4 mahasiswa dan maksimal 6 mahasiswa!
+2. Buatlah versi aplikasi mobile dari aplikasi web ini: http://jawara.sytes.net/ (pastikan akses dengan HTTP bukan HTTPS di browser).
+3. Buatlah hanya berupa UI/tampilan tanpa fungsional/backend, namun tetap bisa berpindah-pindah screen di flutter/mobile.
+4. Buatlah repository kelompok secara private, invite teman sekelompoknya dan dosen pengampu. Jangan lupa di README tambahkan capture GIF hasil UI dan nama-nama anggota kelompoknya.
+5. Presentasikan hasil UI aplikasi mobile tersebut pada pertemuan/minggu ke-9 sebagai nilai UTS
